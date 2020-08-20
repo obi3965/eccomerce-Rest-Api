@@ -9,7 +9,7 @@ const dotenv = require('dotenv');
 
 
 
-const blogRouter = require('./routes/blogs')
+const authRouter = require('./routes/auth')
 const adminRouter = require('./routes/admin/auth')
 const app = express();
 
@@ -40,8 +40,8 @@ useFindAndModify:false
 
 
 
- app.use('/api/v1/blogs', blogRouter)
- app.use('/api/admin', adminRouter)
+ app.use('/api', authRouter)
+ app.use('/api', adminRouter)
 
 
 //ERROR HANDLER MIDDLEWARE

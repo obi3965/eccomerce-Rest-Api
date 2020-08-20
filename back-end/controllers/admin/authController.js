@@ -1,23 +1,10 @@
 const User = require('../../models/User')
 //const { authSchema } = require('../helpers/User-Schema-validation')
 const JWT = require('jsonwebtoken')
+const { validationResult } = require('express-validator');
 
 
 
-exports.protect = async(req,res,next) =>{
-  try{
-      const token = req.header('Authorization').replace('Bearer ','')
-      const user = await JWT.verify(token, process.env.JWT_SECRET_KEY)
-     
-      if(!user)
-      throw new Error()
-      
-      req.user = user
-      next();
-  }catch(e){
-      res.status(404).send({error:"error in Authentication"})
-  }
-}
 
 exports.signup = async (req, res) => {
 
@@ -30,6 +17,7 @@ exports.signup = async (req, res) => {
     password:req.body.password,
     role:'admin'
   })
+   
     try{
       User.findOne({email: req.body.email})
        const users =  await user.save()
@@ -38,10 +26,14 @@ exports.signup = async (req, res) => {
           user:users,
           
         })
-    }catch(e){
+        const errors = validationResult(req)
+        if(!errors){
+          return next()
+        }
+    }catch(errors){
         res.status(400).json({
           status:'admin already exist',
-          message:e
+          errors:errors
         })
     }
  
