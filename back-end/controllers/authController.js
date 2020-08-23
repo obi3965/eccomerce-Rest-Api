@@ -43,8 +43,8 @@ exports.login = async (req, res) => {
    try {
    const user = await User.findOne({email:req.body.email})
     if(user){
-      if(user.authenticate(req.body.password) && user.role === 'user'){
-        const token = JWT.sign({_id:user._id}, process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRES_IN})
+      if(user.authenticate(req.body.password)){
+        const token = JWT.sign({_id:user._id, role: user.role}, process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRES_IN})
        const {_id,fristName, lastName, email, role, fullName } = user
        res.status(200).json({
          status:'successfully logged in',

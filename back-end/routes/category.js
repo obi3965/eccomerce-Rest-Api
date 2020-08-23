@@ -1,12 +1,13 @@
 const express = require('express');
-const Category = require('../models/category')
+
+const {CreateCategory, GetAllCategory} = require('../controllers/categoryController');
+const { protect, adminMiddleware } = require('../middleware');
 const router = express.Router();
 
+ router.route('/create/category').post(protect,adminMiddleware ,CreateCategory)
 
+router.route('/category/getCategory').get(GetAllCategory)
 
-// router
-// .route('/').get(GetAllBlogs)
-// .post(CreateBlogs)
 
 
 // router 
