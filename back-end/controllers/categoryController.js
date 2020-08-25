@@ -1,6 +1,10 @@
 const Category = require('../models/category')
 const slugify = require('slugify')
 
+
+
+
+
  function createCategories(categories, parentId = null){
   const categoryList = []
   let category;
@@ -25,6 +29,13 @@ exports.CreateCategory = async (req,res)=>{
       name: req.body.name,
       slug:slugify(req.body.name)
   }
+
+ 
+  if(req.file){
+      categoryUrl = 
+      categoryObj.categoryImage = process.env.API + '/public/' + req.file.filename
+    }
+
   try {
       if(req.body.parentId){
           categoryObj.parentId = req.body.parentId
