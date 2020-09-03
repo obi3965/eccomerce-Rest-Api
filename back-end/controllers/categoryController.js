@@ -25,14 +25,16 @@ const slugify = require('slugify')
 }
 
 exports.CreateCategory = async (req,res)=>{
+    
   const categoryObj ={
       name: req.body.name,
-      slug:slugify(req.body.name)
+      slug:slugify(req.body.name),
+      
   }
 
  
   if(req.file){
-      categoryUrl = 
+      
       categoryObj.categoryImage = process.env.API + '/public/' + req.file.filename
     }
 

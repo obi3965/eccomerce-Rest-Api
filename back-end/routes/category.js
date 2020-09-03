@@ -10,17 +10,19 @@ const { protect, adminMiddleware } = require('../middleware')
 
 const router = express.Router()
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, path.join(path.dirname(__dirname), 'public/uploads'))
-  },
-  filename: function (req, file, cb) {
-    cb(null, shortId.generate() + '-' + file.originalname)
-  },
-})
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, path.join(path.dirname(__dirname), '/uploads/'))
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, shortId.generate() + '-' + file.originalname)
+//   },
+// })
 
-const upload = multer({ storage })
+// const upload = multer({ storage })
 
+const uploadFile = require('../middleware/upload') 
+const upload = multer(uploadFile)
 router
   .route('/create/category')
   .post(

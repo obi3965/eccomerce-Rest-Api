@@ -19,9 +19,8 @@ const app = express();
 
 
 //to work with our assets files which is static files
-//  app.use('/public',express.static(path.join(__dirname, 'uploads')));   
 // Serving static files
-app.use(express.static(`${__dirname}/public`));
+app.use('/public',express.static(path.join(__dirname, 'assets')));
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ limit:'10mb', extended: false }))
