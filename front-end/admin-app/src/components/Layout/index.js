@@ -1,19 +1,22 @@
-import React from 'react';
+import React from 'react'
+//import { Container } from 'react-bootstrap'
+/**
+* @author
+* @function Layout
+**/
 
-import Header from '../Header'
-import { Container } from 'react-bootstrap';
-const Layout = (props )=> {
-    return (
-        <>
-          <Header />
-          <Container>
-            {props.child} 
-          </Container>
-           
-        </>
-    )
-};
+import Header from '../Header/index'
+const Layout = (props) => {
+  return(
+    <>
+    <Header/>
+   
+      {props.children}
+    
+    
+    </>
+   ) 
 
+ }
 
-export default Layout;
-
+export default Layout

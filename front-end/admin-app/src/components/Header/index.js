@@ -1,24 +1,38 @@
-import React from "react";
+import React from 'react'
+import { Navbar, Nav, Container } from 'react-bootstrap'
+import { NavLink, Link} from 'react-router-dom'
+/**
+* @author
+* @function Header
+**/
 
-import { Nav, Navbar, Container,NavLink  } from "react-bootstrap";
 const Header = (props) => {
-  return (
+  return(
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-           
-          </Nav>
-          <Nav>
-            <NavLink to="/signin">login</NavLink>
-            <NavLink to="/signup">signup</NavLink>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
-};
+  <Link to="/" className="navbar-brand">admin dashboard</Link>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="m-auto">
+      <Nav.Link href="#features">Features</Nav.Link>
+      <Nav.Link href="#pricing">Pricing</Nav.Link>
+    </Nav>
+    <Nav>
+      <li className="nav-item">
+       <NavLink to="/signin" className="nav-link">signin</NavLink> 
+      </li>
+      <li className="nav-item">
+        <NavLink to="/signup" className="nav-link" >signup</NavLink>
+      </li>
+      
+    </Nav>
+    
+  </Navbar.Collapse>
+  </Container>
+</Navbar>
+   
+   )
 
-export default Header;
+ }
+
+export default Header

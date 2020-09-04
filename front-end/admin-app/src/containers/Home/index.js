@@ -1,18 +1,23 @@
 import React from 'react'
-import { Button, Jumbotron } from 'react-bootstrap'
-import Layout from '../../components/Layout';
+import Layout from '../../components/Layout'
+import { Jumbotron } from 'react-bootstrap'
+/**
+* @author
+* @function Home
+**/
 
-const Home= (props) => {
-    return ( 
-        <div className="app">
+const Home = (props) => {
+  return(
+    <div>
         <Layout>
             <Jumbotron>
-                hi
-            </Jumbotron>
-             <Button variant="primary">Primary</Button>
-        </Layout>
-        </div>
-    )
-}
+            <h1>wellcome to admin dashboard</h1>
 
-export default Home;
+            </Jumbotron>
+        </Layout>
+    </div>
+   )
+
+ }
+
+export default Home
