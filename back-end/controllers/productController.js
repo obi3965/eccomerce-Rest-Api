@@ -1,15 +1,11 @@
 const Product = require('../models/product')
 const slugify = require('slugify')
-const shortid = require('shortid')
+
 
 
 
 exports.CreateProduct = async (req,res)=>{
-//   res.status(201).json({
-//       message:'product created',
-//       file: req.files,
-//       body:req.body
-//   })
+
 
   const {name, price, quantity,offer, description, category, createdBy } = req.body
   

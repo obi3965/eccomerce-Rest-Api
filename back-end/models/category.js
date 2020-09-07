@@ -20,7 +20,7 @@ const categorySchema = new mongoose.Schema({
  }
 }, {timestamps:true})
 
-//categorySchema.virtual("categoryImage_url").get(function () { return `http://localhost:8000/files/${this.categoryImage}` })
+
 
 
 module.exports = mongoose.model('Category', categorySchema)

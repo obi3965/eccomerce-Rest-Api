@@ -21,7 +21,7 @@ exports.signup = async (req, res) => {
       User.findOne({email: req.body.email})
        const users =  await user.save()
         res.status(201).json({
-          status:'user created successfully',
+          message:'user created successfully',
           user:users,
           
         })
@@ -29,10 +29,10 @@ exports.signup = async (req, res) => {
         // if(!errors){
         //   return next()
         // }
-    }catch(errors){
+    }catch(error){
         res.status(400).json({
-          status:'user already exist',
-          errors:errors
+          message:'user already exist',
+          error:error
         })
     }
  
@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
         const token = JWT.sign({_id:user._id, role: user.role}, process.env.JWT_SECRET_KEY,{expiresIn:process.env.JWT_EXPIRES_IN})
        const {_id,fristName, lastName, email, role, fullName } = user
        res.status(200).json({
-         status:'successfully logged in',
+         message:'successfully logged in',
          token,
          user:{
           _id,fristName, lastName, email, role, fullName
@@ -62,7 +62,8 @@ exports.login = async (req, res) => {
       }
    } catch (error) {
     return res.status(500).json({
-      status:'not valid email/password'
+      message:'not valid email/password',
+      error:error
     })
    }
   
