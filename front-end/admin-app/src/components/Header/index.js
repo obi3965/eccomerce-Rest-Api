@@ -46,10 +46,10 @@ dispatch(signout())
   <Link to="/" className="navbar-brand">admin dashboard</Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="m-auto">
+    {/* <Nav className="m-auto">
       <Nav.Link href="#features">Features</Nav.Link>
       <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav>
+    </Nav> */}
     
     { auth.authenticate ? renderLoggedInLinks() : renderNonLoggedInLinks()}
   </Navbar.Collapse>
