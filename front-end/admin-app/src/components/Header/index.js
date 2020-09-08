@@ -29,7 +29,7 @@ dispatch(signout())
 
   const renderNonLoggedInLinks = () =>{
     return (
-    <Nav>
+    <Nav className="ml-auto">
       <li className="nav-item">
        <NavLink to="/signin" className="nav-link">signin</NavLink> 
       </li>
