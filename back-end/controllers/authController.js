@@ -25,10 +25,7 @@ exports.signup = async (req, res) => {
           user:users,
           
         })
-        // const errors = validationResult(req)
-        // if(!errors){
-        //   return next()
-        // }
+        
     }catch(error){
         res.status(400).json({
           message:'user already exist',
@@ -70,25 +67,11 @@ exports.login = async (req, res) => {
    } 
   
 
-  //  exports.profile = async (req,res)=>{
-  //   res.status(200).json({
-  //     status:'user profile'
-  //   })
-
-  //  }
+  
 
      
 
-  //   exports.logout = async (req,res) =>{
-  //     try{
-  //          req.user.tokens = req.user.tokens.filter(token => token.token !== req.token)
-  //         req.user.tokens = []
-  //         await req.user.save();
-  //         res.status(200).send(req.user)
-  //     }catch(e){
-  //         res.status(500).send()
-  //     }
-  // }
+  
    
   
 
