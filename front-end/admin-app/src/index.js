@@ -10,16 +10,13 @@ import { BrowserRouter as Router } from "react-router-dom";
 window.store = store;
 
 ReactDOM.render(
+<React.Fragment>
   <Provider store={store}>
     <Router>
-      <React.Fragment>
-        <App />
-      </React.Fragment>
-      
-    </Router>
-    
+        <App /> 
+    </Router>  
   </Provider>,
-
+</React.Fragment>,
   document.getElementById("root")
 );
 
