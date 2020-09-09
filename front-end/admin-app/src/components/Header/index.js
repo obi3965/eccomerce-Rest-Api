@@ -17,7 +17,7 @@ dispatch(signout())
 }
   const renderLoggedInLinks = () =>{
     return (
-    <Nav>
+    <Nav className="ml-auto">
       <li className="nav-item">
        <span className="nav-link" onClick={ logout } >signout</span> 
       </li>
@@ -41,20 +41,19 @@ dispatch(signout())
     )
   }
   return(
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg">
       <Container fluid>
-  <Link to="/" className="navbar-brand">admin dashboard</Link>
+  <Link to="/" className="navbar-brand">admin <span>dashboard</span></Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    {/* <Nav className="m-auto">
-      <Nav.Link href="#features">Features</Nav.Link>
-      <Nav.Link href="#pricing">Pricing</Nav.Link>
-    </Nav> */}
+   
     
     { auth.authenticate ? renderLoggedInLinks() : renderNonLoggedInLinks()}
   </Navbar.Collapse>
   </Container>
+
 </Navbar>
+ 
    
    )
 

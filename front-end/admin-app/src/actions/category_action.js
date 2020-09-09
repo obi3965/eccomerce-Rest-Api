@@ -26,8 +26,23 @@ export const getAllCategories = () =>{
 
 export const addCategory = (form) =>{
     return async dispatch =>{
+        dispatch({
+            type: categoryConstants.ADD_NEW_CATEGORIES_REQUEST,
+            
+        })
         const res = await Axios.post('/create/category', form)
         console.log(res)
+        if(res.status === 201){
+            dispatch({
+                type: categoryConstants.ADD_NEW_CATEGORIES_SUCCESS,
+                payload: res.data.category
+            })
+        }else{
+            dispatch({
+                type: categoryConstants.ADD_NEW_CATEGORIES_FAILURE,
+                payload: res.data.error
+            })
+        }
     }
     
 }

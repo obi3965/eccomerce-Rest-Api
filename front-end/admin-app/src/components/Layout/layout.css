@@ -1,0 +1,39 @@
+.sidebar ul li a.active{
+    background-color: #22d1ee !important;
+    color: #fff;
+    box-shadow: 10px 8px 25px -8px rgba(0, 0, 0, 0.8);
+}
+.sidebar ul li a{
+    margin-left: -39px;
+    margin-right: 20px; 
+   text-transform: capitalize;
+   color: #fff;
+   font-weight: 500;
+   opacity: .57;
+   padding: 10px 55px;
+   border-top-right-radius: 25px;
+   border-bottom-right-radius: 25px;
+   text-decoration: none !important;
+   text-align: center;
+   font-size: 16px;
+   letter-spacing: 1.5px;
+   display: block;
+}
+.sidebar ul{
+    list-style: none;
+    margin: 10px 0;
+}
+.sidebar ul li {
+    margin: 6px auto;
+    box-sizing: border-box;
+    
+}
+.sidebar{
+    display: flex !important;
+    flex-direction: column;
+    text-align: center;
+    background: #0b112c;
+    margin: 0 !important;
+    justify-content: center;
+    padding: 0;
+}
