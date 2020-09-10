@@ -9,7 +9,7 @@ import Layout from '../../components/Layout'
 const Orders = (props) => {
   return(
     <Layout sidebar>
-       Orders
+        Orders
     </Layout>
    )
 
